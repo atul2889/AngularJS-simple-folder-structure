@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body ng-app="myApp">
+
+<div style="text-align: center;">
+	<h1>Login</h1>
+
+	<form name="projectForm">
+
+		<md-input-container style="width: 30%">
+			<label>Username</label>
+			<input required name="username" type="text" ng-model="uname">
+			<div ng-messages="projectForm.username.$error">
+				<div ng-message="required">This is required.</div>
+			</div>
+		</md-input-container>
+
+		</br>
+
+		<md-input-container style="width: 30%">
+			<label>Password</label>
+			<input required type="password" name="password" ng-model="pass">
+			<div ng-messages="projectForm.password.$error">
+				<div ng-message="required">This is required.</div>
+			</div>
+		</md-input-container>
+		</br>
+		<md-button ng-disabled="!projectForm.$valid" type="submit" ng-click="login(uname,pass)" value="Login">Submit</md-button>
+	</form>
+	<a href="#!/signup">Sign up</a>
+
+</div>
+
+</body>
+</html>

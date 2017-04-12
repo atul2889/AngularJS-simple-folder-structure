@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body ng-app="myApp">
+
+<div style="text-align: center;">
+	<h1>Signup</h1>
+
+	<form name="signupForm" ng-submit="register()">
+
+		<md-input-container style="width: 30%">
+			<label>Full Name</label>
+			<input required name="name" type="text" ng-model="user.name">
+			<span style="color: red" ng-show="signupForm.name.$error.required">Required</span>
+		</md-input-container>
+		</br>
+
+		<md-input-container style="width: 30%">
+			<label>Email</label>
+			<input required type="email" name="email" ng-model="user.email">
+			<span style="color: red" ng-show="signupForm.email.$error.email">Invalid email </span>
+			<span style="color: red" ng-show="signupForm.email.$error.required">Required</span>
+		</md-input-container>
+		</br>
+
+		<md-input-container style="width: 30%">
+			<label>Password</label>
+			<input required name="pass" type="password" ng-model="user.pass">
+			<span style="color: red" ng-show="signupForm.pass.$error.required">Required</span>
+		</md-input-container>
+		</br>
+
+		<md-button class="md-raised md-primary" ng-disabled="!signupForm.$valid" type="submit" >Submit</md-button>
+
+	</form>
+
+</div>
+
+</body>
+</html>
